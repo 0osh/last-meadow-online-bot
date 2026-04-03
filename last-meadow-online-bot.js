@@ -1,7 +1,9 @@
 // click dragon achievement
+// dont paste these few lines if you really really dont want it
+// it happens instantly anyways
 { // scope to contain the variable to prevent potential overwrites
-	const dragon = document.querySelector(".dragonClickable__8e80e");
-	// do 1000 even though you only need 500 in case some arent registered idk it doesnt take long anyways
+	const dragon = document.querySelector("[class^=dragonClickable]");
+	// do 1000 even though you only need 500 in case some arent registered idk
 	if (dragon) { for (let i = 0; i < 1000; i++) { dragon.click() } }
 }
 
@@ -9,7 +11,7 @@
 
 
 {
-	document.getElementsByTagName("oo-bot-ui")[0]?.remove();
+	document.getElementById("oo-bot-ui")?.remove();
 
 	const uiString = `
 	<span>select what the bot should spam:</span>
@@ -99,7 +101,7 @@ function startAdventureLoop() {
 	refreshAllCheckbox();
 
 	startLoop("adventureButton", () => {
-		document.querySelector(".gameActions__8e80e")?.firstElementChild.firstElementChild.firstElementChild.click();
+		document.querySelector("[class^=gameActions]")?.firstElementChild.firstElementChild.firstElementChild.click();
 	}, 10);
 }
 
@@ -119,12 +121,12 @@ function startArrowsLoop() {
 	refreshAllCheckbox();
 
 	startLoop("arrowsButton", () => {
-		document.querySelector(".gameActions__8e80e")?.children[1].firstElementChild.click();
+		document.querySelector("[class^=gameActions]")?.children[1].firstElementChild.click();
 	}, 1000);
 
 	startLoop("arrowsTask", () => {
-		if (document.querySelector(".sequences__34527") != null) {
-			const arrowsParents = document.querySelector(".sequences__34527")?.children;
+		if (document.querySelector("[class^=sequences]") != null) {
+			const arrowsParents = document.querySelector("[class^=sequences]")?.children;
 			if (arrowsParents == undefined) { console.warn("bot error: couldnt find arrows"); return; }
 			let arrowsParentIndex = 0;
 			let arrowsPressInterval = setInterval(() => { // interval cause it doesnt like it otherwise idk
@@ -161,13 +163,13 @@ function startTargetsLoop() {
 	refreshAllCheckbox();
 
 	startLoop("targetsButton", () => {
-		document.querySelector(".gameActions__8e80e")?.children[2].firstElementChild.click();
+		document.querySelector("[class^=gameActions]")?.children[2].firstElementChild.click();
 	}, 1000);
 
 	startLoop("targetsTask", () => {
-		if (document.querySelector(".targetContainer_b6b008") != null) {
+		if (document.querySelector("[class^=targetContainer]") != null) {
 			let targetPressInterval = setInterval(() => {
-				const target = document.querySelector(".targetContainer_b6b008")?.firstElementChild;
+				const target = document.querySelector("[class^=targetContainer]")?.firstElementChild;
 				if (target == undefined) { console.warn("bot error: couldnt find target"); clearInterval(targetPressInterval); return; }
 				target.click();
 			}, 10);
@@ -191,8 +193,8 @@ function startCloseDialogsLoop() {
 	refreshAllCheckbox();
 
 	startLoop("closeDialogs", () => {
-		document.querySelector(".continueButtonWrapper__24749")?.firstElementChild.click();
-		document.querySelector(".footer__0cc07")?.firstElementChild.click();
+		document.querySelector("[class^=continueButtonWrapper]")?.firstElementChild.click();
+		document.querySelector("[class^=footer]")?.firstElementChild.click();
 	}, 500);
 }
 
