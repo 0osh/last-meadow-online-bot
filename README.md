@@ -1,3 +1,6 @@
+> [!WARNING]
+> ive moved to codeberg, dont rely on this repo. (codeberg is like github but no microslop) https://codeberg.org/oosh/last-meadow-online-bot
+
 # last-meadow-online-bot
 simple script that plays the last meadow online game automatically from discords 2026 april fools event
 
